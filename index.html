@@ -1,11 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive layout</title>
+    <title>Responsive Layout Hub</title>
+    <link rel="icon" type="image/png" href="images/grid.png">
+    <link rel="stylesheet" href="style/layout.css">
+    <link rel="stylesheet" href="style/sticky_nav.css">
+    <style>
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="flex.html">Flexbox Example</a></li>
+            <li><a href="gird.html">Grid Example</a></li>
+            <li><a href="layout.html">Layout Example</a></li>
+            <li><a href="gallery.html">Image Gallery</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <header>
+            <h1>Responsive Layout Project Hub</h1>
+        </header>
+
+        <!-- Nav moved to top -->
+
+        <main>
+            <h2>Welcome</h2>
+            <p>This is the central hub for the responsive layout project. All files in the directory are connected
+                below.</p>
+
+            <h3>Project Files</h3>
+            <ul>
+                <li><strong>HTML Files:</strong> flex.html, gallery.html, gird.html, layout.html</li>
+                <li><strong>CSS:</strong> style/layout.css</li>
+                <li><strong>Images:</strong> Located in images/ folder (See Gallery)</li>
+            </ul>
+        </main>
+
+        <aside id="sidebar">
+            <h3>Quick Preview</h3>
+            <p>Sample image from collection:</p>
+            <img src="images/A.jpg" alt="Sample A">
+        </aside>
+
+        <aside id="advertise">
+            <h3>Featured</h3>
+            <img src="images/grid.png" alt="Grid Preview">
+        </aside>
+
+        <footer>
+            <p>&copy; 2026 Responsive Layout Project</p>
+        </footer>
+    </div>
 </body>
+
 </html>

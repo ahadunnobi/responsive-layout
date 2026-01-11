@@ -1,0 +1,40 @@
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #222;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+nav h2 {
+    display: none; /* Hide the title "Navigation" to save space if present */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+nav li {
+    margin: 0;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #ffd700; /* Gold hover */
+}
