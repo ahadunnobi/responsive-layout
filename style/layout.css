@@ -1,59 +1,186 @@
- .container>* {
-     border: 3px solid gold;
-     background-color: blanchedalmond;
-     padding: 30px;
- }
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
 
- header {
-     grid-area: header;
- }
+:root {
+    /* Color Palette - Dark Premium */
+    --bg-body: #0f172a;
+    /* Slate 900 */
+    --bg-surface: #1e293b;
+    /* Slate 800 */
+    --bg-card: #334155;
+    /* Slate 700 */
+    --primary: #38bdf8;
+    /* Sky 400 */
+    --primary-hover: #0ea5e9;
+    /* Sky 500 */
+    --text-main: #f1f5f9;
+    /* Slate 100 */
+    --text-muted: #94a3b8;
+    /* Slate 400 */
+    --accent: #f472b6;
+    /* Pink 400 */
+    --border: #475569;
+    /* Slate 600 */
 
- /* Nav is now handled by sticky_nav.css and is outside the grid */
+    /* Spacing & Radius */
+    --radius: 12px;
+    --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
 
- main {
-     grid-area: main;
- }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
- #sidebar {
-     grid-area: sidebar;
- }
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-body);
+    color: var(--text-main);
+    line-height: 1.6;
+}
 
- #advertise {
-     grid-area: advertise;
- }
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--text-main);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
 
- footer {
-     grid-area: footer;
- }
+h1 {
+    font-size: 2.5rem;
+    letter-spacing: -0.02em;
+}
 
- .container {
-     display: grid;
-     gap: 20px;
-     /* Adjusted areas since navbar is removed */
-     grid-template-areas:
-         "header header header header"
-         "main   main   main   sidebar"
-         "main   main   main   advertise"
-         "footer footer footer footer"
- }
+h2 {
+    font-size: 2rem;
+}
 
- @media screen and (max-width:576px) {
-     .container {
-         grid-template-areas:
-             "header"
-             "main"
-             "sidebar"
-             "advertise"
-             "footer"
-     }
- }
+h3 {
+    font-size: 1.5rem;
+    color: var(--primary);
+}
 
- @media screen and (min-width:576px) and (max-width:992px) {
-     .container {
-         grid-template-areas:
-             "header    header header"
-             "main      main   sidebar"
-             "footer    footer advertise"
+p {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+}
 
-     }
- }
+/* Links & Buttons */
+a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: var(--primary-hover);
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--primary);
+    color: #0f172a;
+    /* Dark text on bright button */
+    border-radius: var(--radius);
+    font-weight: 600;
+    transition: all 0.2s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+    color: #0f172a;
+}
+
+/* Layout Utilities */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    min-height: 100vh;
+}
+
+/* Grid Layout Areas (Legacy Support enhanced) */
+.grid-container {
+    display: grid;
+    gap: 24px;
+    grid-template-areas:
+        "header header header header"
+        "main   main   main   sidebar"
+        "main   main   main   advertise"
+        "footer footer footer footer";
+}
+
+header {
+    grid-area: header;
+}
+
+main {
+    grid-area: main;
+}
+
+#sidebar {
+    grid-area: sidebar;
+}
+
+#advertise {
+    grid-area: advertise;
+}
+
+footer {
+    grid-area: footer;
+}
+
+/* Enhanced Component Styles */
+header,
+footer,
+main,
+aside {
+    background-color: var(--bg-surface);
+    padding: 2rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+}
+
+/* Responsive Grid Adjustments */
+@media screen and (max-width: 992px) {
+    .grid-container {
+        grid-template-areas:
+            "header    header header"
+            "main      main   sidebar"
+            "footer    footer advertise";
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .grid-container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+}
+
+/* Image Styles */
+img {
+    border-radius: var(--radius);
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}

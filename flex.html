@@ -4,42 +4,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Flex</title>
+    <title>Flexbox Dashboard</title>
     <link rel="icon" type="image/png" href="images/grid.png">
+    <link rel="stylesheet" href="style/layout.css">
     <link rel="stylesheet" href="style/sticky_nav.css">
     <style>
-        .container {
+        .dashboard-header {
             display: flex;
-            gap: 30px;
+            gap: 20px;
+            margin-bottom: 3rem;
         }
 
-        .box {
-            background-color: teal;
-            padding: 20px;
-            border-radius: 10px;
-            color: white
+        .goal-card {
+            flex: 1;
+            background-color: var(--bg-card);
+            padding: 2rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
         }
 
-        .items {
-            width: 100px;
-            padding: 10px;
-            background-color: tomato;
+        .goal-card h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
         }
 
-        .box-container {
+        .calendar-grid {
             display: flex;
             flex-wrap: wrap;
-            gap: 30px;
+            gap: 15px;
+            justify-content: space-between;
         }
 
-        @media screen and (max-width:576px) {
-            .container {
+        .day-card {
+            width: 100px;
+            /* As requested roughly by original size */
+            height: 100px;
+            background-color: var(--bg-surface);
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s;
+            cursor: pointer;
+        }
+
+        .day-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            background-color: var(--bg-card);
+        }
+
+        @media screen and (max-width:768px) {
+            .dashboard-header {
                 flex-direction: column;
             }
 
-            .items {
-                width: 100%;
-
+            .calendar-grid {
+                justify-content: center;
             }
         }
     </style>
@@ -49,55 +73,49 @@
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="flex.html">Flexbox Example</a></li>
-            <li><a href="gird.html">Grid Example</a></li>
-            <li><a href="layout.html">Layout Example</a></li>
+            <li><a href="flex.html">Flexbox Dashboard</a></li>
+            <li><a href="grid.html">Grid Calendar</a></li>
+            <li><a href="layout.html">Classic Layout</a></li>
             <li><a href="gallery.html">Image Gallery</a></li>
         </ul>
     </nav>
-    <h2>Lets Explore Flex </h2>
-
     <div class="container">
-        <!-- .box>h3{box-$}+p{lorem}  -->
-        <div class="box">
-            <h3>box-1</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci commodi reprehenderit laborum
-                blanditiis ad officia modi aperiam hic veritatis, ex numquam, dolorum iusto? Quis cupiditate reiciendis
-                magni odit accusantium necessitatibus praesentium nihil odio dolorum ullam dolorem consectetur, dolor,
-                laborum ducimus esse nemo dignissimos officia doloremque rerum aliquam voluptatem. Quisquam neque non,
-                ullam fuga ea sed explicabo similique nulla labore voluptatem?</p>
-        </div>
-        <div class="box">
-            <h3>box-2</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci commodi reprehenderit laborum
-                blanditiis ad officia modi aperiam hic veritatis, ex numquam, dolorum iusto? Quis cupiditate reiciendis
-                magni odit accusantium necessitatibus praesentium nihil odio dolorum ullam dolorem consectetur, dolor,
-                laborum ducimus esse nemo dignissimos officia doloremque rerum aliquam voluptatem. Quisquam neque non,
-                ullam fuga ea sed explicabo similique nulla labore voluptatem?</p>
-        </div>
-    </div>
+        <h2>Weekly Dashboard</h2>
 
-    <div class="box-container">
-        <div class="items">box1</div>
-        <div class="items">box2</div>
-        <div class="items">box3</div>
-        <div class="items">box4</div>
-        <div class="items">box5</div>
-        <div class="items">box6</div>
-        <div class="items">box7</div>
-        <div class="items">box8</div>
-        <div class="items">box9</div>
-        <div class="items">box10</div>
-        <div class="items">box11</div>
-        <div class="items">box12</div>
-        <div class="items">box13</div>
-        <div class="items">box14</div>
-        <div class="items">box15</div>
-        <div class="items">box16</div>
-        <div class="items">box17</div>
-        <div class="items">box18</div>
-        <div class="items">box19</div>
-        <div class="items">box20</div>
+        <div class="dashboard-header">
+            <div class="goal-card">
+                <h3>Primary Goal</h3>
+                <p>Complete the responsive layout project with premium aesthetics.</p>
+            </div>
+            <div class="goal-card">
+                <h3>Current Status</h3>
+                <p>All systems operational. Design system updated to Dark Mode.</p>
+            </div>
+        </div>
+
+        <h3>Daily Progress Tracker</h3>
+        <div class="calendar-grid">
+            <div class="day-card">Day 1</div>
+            <div class="day-card">Day 2</div>
+            <div class="day-card">Day 3</div>
+            <div class="day-card">Day 4</div>
+            <div class="day-card">Day 5</div>
+            <div class="day-card">Day 6</div>
+            <div class="day-card">Day 7</div>
+            <div class="day-card">Day 8</div>
+            <div class="day-card">Day 9</div>
+            <div class="day-card">Day 10</div>
+            <div class="day-card">Day 12</div>
+            <div class="day-card">Day 13</div>
+            <div class="day-card">Day 14</div>
+            <div class="day-card">Day 15</div>
+            <div class="day-card">Day 16</div>
+            <div class="day-card">Day 17</div>
+            <div class="day-card">Day 18</div>
+            <div class="day-card">Day 19</div>
+            <div class="day-card">Day 20</div>
+            <div class="day-card">Day 21</div>
+        </div>
     </div>
 
 
